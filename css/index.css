@@ -1,0 +1,179 @@
+/* ANIMACIONES */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECCIONES */
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* PARALLAX */
+}
+
+section h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+section p {
+  font-size: 1.2em;
+  max-width: 800px;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+section img {
+  max-width: 60%;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  transition: transform 0.6s ease;
+}
+
+section img:hover {
+  transform: scale(1.05);
+}
+
+/* FONDOS */
+#inicio { background-image: url("https://copilot.microsoft.com/th/id/BCO.eea70281-11d4-4549-9126-ea40a168f5f5.png"); }
+#escaneo { background-image: url("https://copilot.microsoft.com/th/id/BCO.8f663cb9-44a2-4818-a623-326a94ef74a5.png"); }
+#modelado { background-image: url("https://raw.githubusercontent.com/JoshuaRizz0/PointCloud3D/refs/heads/main/modelado.png"); }
+#sobre-escaneo { background-image: url("https://copilot.microsoft.com/th/id/BCO.0b824a23-e588-4f2c-a291-61bacea7c9e5.png"); }
+#visualizador { background-image: url("https://copilot.microsoft.com/th/id/BCO.8f663cb9-44a2-4818-a623-326a94ef74a5.png"); }
+#soluciones { background-image: url("https://copilot.microsoft.com/th/id/BCO.eea70281-11d4-4549-9126-ea40a168f5f5.png"); }
+
+/* BOTÓN WHATSAPP */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  z-index: 20;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* VISUALIZADOR 3D */
+#viewer {
+  width: 80%;
+  height: 60vh;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+
+/* MENÚ */
+.cntIconMenu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 2em;
+  z-index: 2;
+}
+
+.cntMenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(11, 15, 20, 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  z-index: 10;
+}
+
+.cntMenu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* IconMenu and navigation menu */
+
+.visibleIcon { display: block; }
+.hiddenIcon { display: none; }
+
+/* .visibleMenu { display: block; } */
+.hiddenMenu { display: none; }
+
+/* IconMenu and navigation menu */
+
+@media (min-width: 768px) {
+  .cntIconMenu {
+    display: none;
+  }
+
+  .cntMenu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    width:fit-content ;
+    height:fit-content;
+    background: rgba(0,0,0,0.6);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 10;
+    backdrop-filter: blur(6px);
+  }
+
+  .cntMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+  }
+}

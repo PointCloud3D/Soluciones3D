@@ -11,7 +11,7 @@
 
 /* SECCIONES */
 section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,12 +49,26 @@ section img:hover {
 }
 
 /* FONDOS */
-#inicio { background-image: img src=("./images/background image 2.png"); }
-#escaneo { background-image: img src=("./images/background image for.png"); }
-#modelado { background-image: img src=("./images/technical rendering 3.png"); }
-#sobre-escaneo { background-image: img src=("./images/single illustration .png"); }
-#visualizador { background-image: img src=("./images/inicio.png"); }
-#soluciones { background-image: img src=("./images/modelado.png"); }
+#escaneo {
+  background-image: url("./images/background-image-for.png");
+}
+
+#modelado {
+  background-image: url("./images/technical-rendering-3.png");
+}
+
+#sobre-escaneo {
+  background-image: url("./images/single-illustration-.png");
+}
+
+#visualizador {
+  background-image: url("./images/inicio.png");
+}
+
+#soluciones {
+  background-image: url("./images/modelado.png");
+}
+
 
 /* BOTÓN WHATSAPP */
 .whatsapp-btn {
@@ -177,4 +191,5 @@ nav a:hover::after {
     gap: 2em;
   }
 }
+
 

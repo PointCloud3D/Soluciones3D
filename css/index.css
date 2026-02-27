@@ -50,23 +50,23 @@ section img:hover {
 }
 
 #escaneo {
-  background-image: url("./imagenes/background-image-for.png");
+  background-image: url("./images/background-image-for.png");
 }
 
 #modelado {
-  background-image: url("./imagenes/technical-rendering-3.png");
+  background-image: url("./images/technical-rendering-3.png");
 }
 
 #sobre-escaneo {
-  background-image: url("./imagenes/single-illustration-.png");
+  background-image: url("./images/single-illustration-.png");
 }
 
 #visualizador {
-  background-image: url("./imagenes/inicio.png");
+  background-image: url("./images/inicio.png");
 }
 
 #soluciones {
-  background-image: url("./imagenes/modelado.png");
+  background-image: url("./images/modelado.png");
 }
 
 
@@ -193,6 +193,7 @@ nav a:hover::after {
     gap: 2em;
   }
 }
+
 
 
 

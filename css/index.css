@@ -36,6 +36,7 @@ section p {
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
+/* FONDOS */
 section img {
   max-width: 60%;
   margin-top: 30px;
@@ -48,26 +49,27 @@ section img:hover {
   transform: scale(1.05);
 }
 
-/* FONDOS */
 #escaneo {
-  background-image: url("./images/background-image-for.png");
+  background-image: url("./imagenes/background-image-for.png");
 }
 
 #modelado {
-  background-image: url("./images/technical-rendering-3.png");
+  background-image: url("./imagenes/technical-rendering-3.png");
 }
 
 #sobre-escaneo {
-  background-image: url("./images/single-illustration-.png");
+  background-image: url("./imagenes/single-illustration-.png");
 }
 
 #visualizador {
-  background-image: url("./images/inicio.png");
+  background-image: url("./imagenes/inicio.png");
 }
 
 #soluciones {
-  background-image: url("./images/modelado.png");
+  background-image: url("./imagenes/modelado.png");
 }
+
+
 
 
 /* BOTÓN WHATSAPP */
@@ -191,5 +193,6 @@ nav a:hover::after {
     gap: 2em;
   }
 }
+
 
 

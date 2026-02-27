@@ -50,7 +50,7 @@ section img:hover {
 }
 
 #escaneo {
-  background-image: url("./images/background-image-for.png");
+  background: red !important;
 }
 
 #modelado {
@@ -193,6 +193,7 @@ nav a:hover::after {
     gap: 2em;
   }
 }
+
 
 
 

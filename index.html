@@ -9,26 +9,31 @@
   <meta http-equiv="Expires" content="0" />
 
   <!-- CSS -->
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-
+  <div class = "contenedor">
+  <div class="centerMenu">
   <nav>
-    <div class="cntMenu hiddenMenu" id="cntMenu">
-      <a class="optionMenu" href="#inicio">Inicio</a>
-      <a class="optionMenu" href="#escaneo">Escaneo</a>
-      <a class="optionMenu" href="#modelado">Ingeniería Inversa</a>
-      <a class="optionMenu" href="#sobre-escaneo">Sobre el Escaneo 3D</a>
-      <a class="optionMenu" href="#visualizador">Visualizador 3D</a>
-      <a class="optionMenu" href="#soluciones">Soluciones</a>
-    </div>
 
-    <div class="cntIconMenu">
-      <img src="./images/iconMenu.png" alt="iconMenu" class="visibleIcon" id="iconMenu">
-    </div>
-  </nav>
+      <div class="cntMenu hiddenMenu " id="cntMenu" >
+        
+        <a class="optionMenu" href="#inicio">Inicio</a>
+        <a class="optionMenu" href="#escaneo">Escaneo</a>
+        <a class="optionMenu" href="#modelado">Ingeniería Inversa</a>
+        <a class="optionMenu" href="#sobre-escaneo">Sobre el Escaneo 3D</a>
+        <a class="optionMenu" href="#visualizador">Visualizador 3D</a>
+        <a class="optionMenu" href="#soluciones">Soluciones</a>
+      </div>
+      
+      <div class="cntIconMenu">
+        <img src="./images/iconMenu.png" alt="iconMenu" class="visibleIcon" id="iconMenu">
+      </div>
+    </nav>
+  </div>
 
   <!-- INICIO -->
   <section id="inicio" class="fade-up">
@@ -45,7 +50,7 @@
   </section>
 
   <!-- INGENIERÍA INVERSA -->
-  <section id="modelado" class="fade-up">
+  <section class=" modelado fade-up">
     <h1>Servicios de Ingeniería Inversa</h1>
     <p>Modelos CAD precisos a partir de nubes de puntos.</p>
     <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570">
@@ -65,8 +70,8 @@
     <p>Explora modelos 3D directamente desde el navegador.</p>
 
     <!-- VISUALIZADOR -->
+    <!-- </model-viewer> src="https://drive.google.com/uc?export=download&id=1pdaJm7eI29ePN-7gf63yOMRJk29SPjXu" -->
     <model-viewer id="viewer" 
-      src="https://drive.google.com/uc?export=download&id=1pdaJm7eI29ePN-7gf63yOMRJk29SPjXu" 
       alt="Modelo 3D Tornillo Industrial"
       auto-rotate
       camera-controls
@@ -98,10 +103,11 @@
 
   <!-- BOTÓN WHATSAPP -->
   <a class="whatsapp-btn" href="https://wa.me/5492236730550" target="_blank">💬</a>
-
+  </div>
   <!-- LIBRERÍA MODEL-VIEWER -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-
+  <!--<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+-->
   <script type="module" src="./js/index.js"></script>
 </body>
+  
 </html>

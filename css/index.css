@@ -8,7 +8,16 @@
   opacity: 1;
   transform: translateY(0);
 }
-
+body {
+ background-image : url("../images/inicio.png");
+ overflow: hidden;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+.contenedor {
+ overflow-y: auto;
+ height: 100vh;
+}
 /* SECCIONES */
 section {
   min-height: 100vh;
@@ -49,26 +58,26 @@ section img:hover {
   transform: scale(1.05);
 }
 
-#escaneo {
-  background: url("../images/background image 2.png");
+ /*#escaneo {
+  background-image: url("../images/escaneo.png");
 }
 
-#modelado {
-  background-image: url("./images/technical-rendering-3.png");
+.modelado {
+  background-image: url("../images/TechRendering.png");
 }
 
 #sobre-escaneo {
-  background-image: url("./images/single-illustration-.png");
+  background-image: url("../images/single-illustration-.png");
 }
 
 #visualizador {
-  background-image: url("./images/inicio.png");
+  background-image: url("../images/inicio.png");
 }
 
 #soluciones {
-  background-image: url("./images/modelado.png");
+  background-image: url("../images/modelado.png");
 }
-
+*/
 
 
 
@@ -119,8 +128,15 @@ footer {
   z-index: 2;
 }
 
+/*.centerMenu {
+  display: flex;
+  justify-content: center;
+}*/
+
 .cntMenu {
-  position: fixed;
+  
+  margin: auto;
+  position:relative;
   left: 0;
   top: 0;
   width: 100%;
@@ -173,10 +189,10 @@ nav a:hover::after {
 
   .cntMenu {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    left: auto;
-    width:fit-content ;
+    margin: auto;
+    width:98%;
+    left: 50%;
+    transform: translateX(-50%);
     height:fit-content;
     background: rgba(0,0,0,0.6);
     padding: 10px 20px;
@@ -193,8 +209,3 @@ nav a:hover::after {
     gap: 2em;
   }
 }
-
-
-
-
-

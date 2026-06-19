@@ -14,102 +14,82 @@
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/general.css">
   <link rel="stylesheet" href="./css/index.css">
+
+  <style>
+    /* Ajustes específicos para la cuadrícula de Ingeniería Inversa */
+    .grid-inversa {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .grid-inversa img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .grid-inversa img:hover {
+      transform: scale(1.05);
+    }
+
+    .texto-inversa {
+      color: #cfcfcf;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-top: 15px;
+      text-align: justify;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 
 <body>
   <div class="contenedor">
     <div class="centerMenu">
       <nav>
-
         <div class="cntMenu hiddenMenu" id="cntMenu">
-
           <a class="optionMenu" href="#inicio">Inicio</a>
 
           <!-- Dropdown Ingeniería -->
           <div class="dropdownMenu">
-
-            <a class="optionMenu dropdownBtn" href="#escaneo">
-              Ingeniería
-            </a>
-
+            <a class="optionMenu dropdownBtn" href="#escaneo">Ingeniería</a>
             <div class="dropdownContent">
-
-              <a class="subOptionMenu" href="#modelado">
-                Ingeniería Inversa
-              </a>
-
-              <a class="subOptionMenu" href="#bimcad">
-                Modelado BIM & CAD
-              </a>
-
-              <!-- SUBMENU PLANOS -->
+              <a class="subOptionMenu" href="#modelado">Ingeniería Inversa</a>
+              <a class="subOptionMenu" href="#bimcad">Modelado BIM & CAD</a>
               <div class="dropdownSubMenu">
-
-                <a class="subOptionMenu dropdownBtn" href="#planos">
-                  Planos
-                </a>
-
+                <a class="subOptionMenu dropdownBtn" href="#planos">Planos</a>
                 <div class="dropdownSubContent">
-
-                  <a class="subSubOptionMenu" href="#conjunto">
-                    Conjunto
-                  </a>
-
-                  <a class="subSubOptionMenu" href="#montage">
-                    Montage
-                  </a>
-
-                  <a class="subSubOptionMenu" href="#piezas">
-                    Piezas
-                  </a>
-
-                  <a class="subSubOptionMenu" href="#isometricos">
-                    Isométricos
-                  </a>
-
+                  <a class="subSubOptionMenu" href="#conjunto">Conjunto</a>
+                  <a class="subSubOptionMenu" href="#montage">Montaje</a>
+                  <a class="subSubOptionMenu" href="#piezas">Piezas</a>
+                  <a class="subSubOptionMenu" href="#isometricos">Isométricos</a>
                 </div>
-
               </div>
-
             </div>
-
           </div>
 
-
           <div class="dropdownMenu">
-
-            <a class="optionMenu dropdownBtn" href="#PLC">
-              Automatización
-            </a>
-
+            <a class="optionMenu dropdownBtn" href="#PLC">Automatización</a>
             <div class="dropdownContent">
-
-              <a class="subOptionMenu" href="#PLC">
-                PLC
-              </a>
-
-              <a class="subOptionMenu" href="#hmi">
-                HMI
-              </a>
-
-              <a class="subOptionMenu optionMenu dropdownBtn" href="#domotica">
-                Domótica
-              </a>
-
-              <a class="subOptionMenu optionMenu dropdownBtn" href="#redes">
-                Redes Industriales
-              </a>
-
+              <a class="subOptionMenu" href="#PLC">PLC</a>
+              <a class="subOptionMenu" href="#hmi">HMI</a>
+              <a class="subOptionMenu optionMenu dropdownBtn" href="#domotica">Domótica</a>
+              <a class="subOptionMenu optionMenu dropdownBtn" href="#redes">Redes Industriales</a>
             </div>
-
           </div>
 
           <a class="optionMenu" href="#biomecanica">Biomecánica</a>
-
           <a class="optionMenu" href="#visualizador">Visualizador 3D</a>
           <a class="optionMenu" href="#soluciones">Soluciones</a>
         </div>
-
         <div class="cntIconMenu">
           <img src="./images/iconMenu.png" alt="iconMenu" class="visibleIcon" id="iconMenu">
         </div>
@@ -132,106 +112,52 @@
 
     <!-- INGENIERÍA INVERSA -->
     <section id="modelado" class="fade-up">
-      <h1>Servicios de Ingeniería Inversa</h1>
-      <p>Modelos CAD precisos a partir de nubes de puntos.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570">
+      <h1 style="color:#ffeb3b;">Servicios de Ingeniería Inversa</h1>
+      <p class="texto-inversa">
+        Digitalizamos componentes y estructuras con tolerancias controladas, asegurando una representación fiel del estado real de cada pieza. 
+        A partir de la nube de puntos generamos modelos CAD paramétricos o superficies técnicas listas para mecanizado, impresión 3D o análisis. 
+        Nuestro proceso garantiza repetibilidad, trazabilidad y resultados confiables para entornos industriales exigentes.
+      </p>
+
+      <div class="grid-inversa">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Engranaje 3D">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Escaneo 3D">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Modelo CAD">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Pieza escaneada">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Estructura industrial">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico">
+      </div>
     </section>
 
-    <!-- BIM & CAD -->
+    <!-- RESTO DE SECCIONES -->
     <section id="bimcad" class="fade-up">
       <h1>Modelado BIM & CAD</h1>
       <p>Modelos digitales para ingeniería, arquitectura y manufactura.</p>
       <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570">
     </section>
 
-    <!-- PLANOS -->
     <section id="planos" class="fade-up">
       <h1>Planos Técnicos</h1>
       <p>Documentación técnica detallada para manufactura e ingeniería.</p>
     </section>
 
-    <section id="conjunto" class="fade-up">
-      <h1>Planos de Conjunto</h1>
-      <p>Vistas generales y ensamblajes completos.</p>
-    </section>
-
-    <section id="montage" class="fade-up">
-      <h1>Planos de Montaje</h1>
-      <p>Guías de ensamblaje paso a paso.</p>
-    </section>
-
-    <section id="piezas" class="fade-up">
-      <h1>Planos de Piezas</h1>
-      <p>Detalles dimensionales de cada componente.</p>
-    </section>
-
-    <section id="isometricos" class="fade-up">
-      <h1>Isométricos</h1>
-      <p>Representaciones 3D para fabricación y piping.</p>
-    </section>
-
-    <!-- AUTOMATIZACIÓN -->
     <section id="PLC" class="fade-up">
       <h1>PLC</h1>
       <p>Programación y automatización industrial.</p>
     </section>
 
-    <section id="hmi" class="fade-up">
-      <h1>HMI</h1>
-      <p>Interfaces hombre-máquina para control eficiente.</p>
-    </section>
-
-    <section id="domotica" class="fade-up">
-      <h1>Domótica</h1>
-      <p>Automatización inteligente para hogares y empresas.</p>
-    </section>
-
-    <section id="redes" class="fade-up">
-      <h1>Redes Industriales</h1>
-      <p>Integración de sistemas y comunicación industrial.</p>
-    </section>
-
-    <!-- BIOMECÁNICA -->
     <section id="biomecanica" class="fade-up">
       <h1>Biomecánica</h1>
       <p>Aplicaciones 3D para ortopedia, prótesis y análisis de movimiento.</p>
       <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570">
     </section>
 
-    <!-- VISUALIZADOR 3D -->
     <section id="visualizador" class="fade-up">
       <h1>Visualizador 3D</h1>
       <p>Explora modelos 3D directamente desde el navegador.</p>
-
-      <model-viewer id="viewer" alt="Modelo 3D Tornillo Industrial" auto-rotate camera-controls exposure="1.2">
-      </model-viewer>
-
+      <model-viewer id="viewer" alt="Modelo 3D Tornillo Industrial" auto-rotate camera-controls exposure="1.2"></model-viewer>
     </section>
 
-    <!-- SOLUCIONES -->
     <section id="soluciones" class="fade-up">
       <h1>Soluciones Integrales</h1>
-      <p>Desde el escaneo hasta la simulación, soluciones completas para tu empresa.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180">
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-      PointCloud Soluciones — Campana, Buenos Aires<br>
-      Contacto: pointcloud3d@hotmail.com — WhatsApp: +54 9 223 6730550
-      <br><br>
-      <a href="https://www.instagram.com/point_cloud_3d/" target="_blank" style="text-decoration:none;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
-          style="width:24px; height:24px; vertical-align:middle; margin-right:6px;">
-        @point_cloud_3d
-      </a>
-    </footer>
-
-    <!-- BOTÓN WHATSAPP -->
-    <a class="whatsapp-btn" href="https://wa.me/5492236730550" target="_blank">💬</a>
-  </div>
-
-  <script type="module" src="./js/index.js"></script>
-</body>
-
-</html>
+      <p>Desde el escaneo hasta la simulación, soluciones completas

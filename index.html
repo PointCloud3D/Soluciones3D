@@ -2,51 +2,106 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PointCloud Soluciones</title>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
 
   <!-- CSS -->
-  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/normalize.css">
-  <link rel="stylesheet" href="./css/general.css">
-  <link rel="stylesheet" href="./css/index.css">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/general.css" />
+  <link rel="stylesheet" href="./css/index.css" />
 
   <style>
+    /* Scroll suave */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* Ajustes específicos para la cuadrícula de Ingeniería Inversa */
     .grid-inversa {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
       justify-items: center;
-      align-items: center;
+      align-items: start;
       margin-top: 20px;
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0 16px;
     }
 
     .grid-inversa img {
       width: 100%;
-      max-width: 350px;
+      height: auto;
+      max-width: 380px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      display: block;
     }
 
     .grid-inversa img:hover {
-      transform: scale(1.05);
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
     }
 
     .texto-inversa {
       color: #cfcfcf;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       line-height: 1.6;
-      margin-top: 15px;
+      margin-top: 12px;
       text-align: justify;
-      max-width: 900px;
+      max-width: 980px;
       margin-left: auto;
       margin-right: auto;
+      padding: 0 16px;
+    }
+
+    /* Pequeños ajustes responsivos para hero images y secciones */
+    section img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 12px auto;
+    }
+
+    /* Mantener footer legible */
+    footer {
+      color: #bdbdbd;
+      text-align: center;
+      padding: 28px 16px;
+      font-size: 0.95rem;
+      background: transparent;
+    }
+
+    /* Botón WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      background: #25d366;
+      color: #fff;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 22px;
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25);
+      z-index: 999;
+    }
+
+    /* Menú: asegurar que el menú no tape secciones al anclar */
+    :target {
+      scroll-margin-top: 80px;
     }
   </style>
 </head>
@@ -90,8 +145,9 @@
           <a class="optionMenu" href="#visualizador">Visualizador 3D</a>
           <a class="optionMenu" href="#soluciones">Soluciones</a>
         </div>
+
         <div class="cntIconMenu">
-          <img src="./images/iconMenu.png" alt="iconMenu" class="visibleIcon" id="iconMenu">
+          <img src="./images/iconMenu.png" alt="iconMenu" class="visibleIcon" id="iconMenu" />
         </div>
       </nav>
     </div>
@@ -100,64 +156,132 @@
     <section id="inicio" class="fade-up">
       <h1>PointCloud Soluciones</h1>
       <p>Innovación en escaneo 3D y modelado de piezas industriales.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180">
+      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Estructura industrial" />
     </section>
 
     <!-- ESCANEO -->
     <section id="escaneo" class="fade-up">
       <h1>Escaneo de Piezas</h1>
       <p>Capturamos cada detalle con precisión milimétrica.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180">
+      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Escaneo 3D" />
     </section>
 
     <!-- INGENIERÍA INVERSA -->
     <section id="modelado" class="fade-up">
       <h1 style="color:#ffeb3b;">Servicios de Ingeniería Inversa</h1>
+
       <p class="texto-inversa">
-        Digitalizamos componentes y estructuras con tolerancias controladas, asegurando una representación fiel del estado real de cada pieza. 
-        A partir de la nube de puntos generamos modelos CAD paramétricos o superficies técnicas listas para mecanizado, impresión 3D o análisis. 
+        Digitalizamos componentes y estructuras con tolerancias controladas, asegurando una representación fiel del estado real de cada pieza.
+        A partir de la nube de puntos generamos modelos CAD paramétricos o superficies técnicas listas para mecanizado, impresión 3D o análisis.
         Nuestro proceso garantiza repetibilidad, trazabilidad y resultados confiables para entornos industriales exigentes.
       </p>
 
+      <!-- Cuadrícula con 6 imágenes (usadas también en otras secciones) -->
       <div class="grid-inversa">
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Engranaje 3D">
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Escaneo 3D">
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Modelo CAD">
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Pieza escaneada">
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Estructura industrial">
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico">
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico 1" />
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Escaneo 3D 2" />
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Modelo CAD 3" />
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Pieza escaneada 4" />
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Estructura industrial 5" />
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico 6" />
       </div>
     </section>
 
-    <!-- RESTO DE SECCIONES -->
+    <!-- BIM & CAD -->
     <section id="bimcad" class="fade-up">
       <h1>Modelado BIM & CAD</h1>
       <p>Modelos digitales para ingeniería, arquitectura y manufactura.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570">
+      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="BIM CAD" />
     </section>
 
+    <!-- PLANOS -->
     <section id="planos" class="fade-up">
       <h1>Planos Técnicos</h1>
       <p>Documentación técnica detallada para manufactura e ingeniería.</p>
     </section>
 
+    <section id="conjunto" class="fade-up">
+      <h1>Planos de Conjunto</h1>
+      <p>Vistas generales y ensamblajes completos.</p>
+    </section>
+
+    <section id="montage" class="fade-up">
+      <h1>Planos de Montaje</h1>
+      <p>Guías de ensamblaje paso a paso.</p>
+    </section>
+
+    <section id="piezas" class="fade-up">
+      <h1>Planos de Piezas</h1>
+      <p>Detalles dimensionales de cada componente.</p>
+    </section>
+
+    <section id="isometricos" class="fade-up">
+      <h1>Isométricos</h1>
+      <p>Representaciones 3D para fabricación y piping.</p>
+    </section>
+
+    <!-- AUTOMATIZACIÓN -->
     <section id="PLC" class="fade-up">
       <h1>PLC</h1>
       <p>Programación y automatización industrial.</p>
     </section>
 
+    <section id="hmi" class="fade-up">
+      <h1>HMI</h1>
+      <p>Interfaces hombre-máquina para control eficiente.</p>
+    </section>
+
+    <section id="domotica" class="fade-up">
+      <h1>Domótica</h1>
+      <p>Automatización inteligente para hogares y empresas.</p>
+    </section>
+
+    <section id="redes" class="fade-up">
+      <h1>Redes Industriales</h1>
+      <p>Integración de sistemas y comunicación industrial.</p>
+    </section>
+
+    <!-- BIOMECÁNICA -->
     <section id="biomecanica" class="fade-up">
       <h1>Biomecánica</h1>
       <p>Aplicaciones 3D para ortopedia, prótesis y análisis de movimiento.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570">
+      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Biomecánica" />
     </section>
 
+    <!-- VISUALIZADOR 3D -->
     <section id="visualizador" class="fade-up">
       <h1>Visualizador 3D</h1>
       <p>Explora modelos 3D directamente desde el navegador.</p>
       <model-viewer id="viewer" alt="Modelo 3D Tornillo Industrial" auto-rotate camera-controls exposure="1.2"></model-viewer>
     </section>
 
+    <!-- SOLUCIONES -->
     <section id="soluciones" class="fade-up">
       <h1>Soluciones Integrales</h1>
-      <p>Desde el escaneo hasta la simulación, soluciones 
+      <p>Desde el escaneo hasta la simulación, soluciones completas para tu empresa.</p>
+      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Soluciones integrales" />
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      PointCloud Soluciones — Campana, Buenos Aires<br />
+      Contacto: pointcloud3d@hotmail.com — WhatsApp: +54 9 223 6730550
+      <br /><br />
+      <a href="https://www.instagram.com/point_cloud_3d/" target="_blank" style="text-decoration:none; color:inherit;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram"
+          style="width:24px; height:24px; vertical-align:middle; margin-right:6px;" />
+        @point_cloud_3d
+      </a>
+    </footer>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a class="whatsapp-btn" href="https://wa.me/5492236730550" target="_blank" aria-label="WhatsApp">💬</a>
+  </div>
+
+  <!-- SCRIPTS -->
+  <!-- Librería model-viewer (descomentar si la vas a usar) -->
+  <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>

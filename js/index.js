@@ -34,13 +34,5 @@ OptionsMenu.forEach(function (opcion) {
 
   });
 
-  document.body.style.background = 'none';
-document.body.style.backgroundColor = '#071018';
-document.querySelectorAll('.contenedor').forEach(el => el.style.zIndex = '9999');
-document.querySelectorAll('body *').forEach(el => {
-  if (getComputedStyle(el).display === 'none') el.style.display = 'block';
-  if (getComputedStyle(el).visibility === 'hidden') el.style.visibility = 'visible';
-});
-console.log('Prueba aplicada: overlay ocultado temporalmente y z-index elevado.');
 
 });

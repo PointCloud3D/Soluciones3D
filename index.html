@@ -26,7 +26,7 @@
       color: #ffffff;
     }
 
-    /* Ajustes específicos para la cuadrícula de Ingeniería Inversa */
+    /* Grid para Ingeniería Inversa (ya existente) */
     .grid-inversa {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -66,6 +66,31 @@
       margin-left: auto;
       margin-right: auto;
       padding: 0 16px;
+    }
+
+    /* Grid para Escaneo (4 imágenes) */
+    .grid-escaneo {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      max-width: 1200px;
+      margin: 18px auto;
+      padding: 0 16px;
+      justify-items: center;
+    }
+
+    .grid-escaneo img {
+      width: 100%;
+      height: auto;
+      max-width: 520px;
+      border-radius: 6px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+      transition: transform 0.25s ease;
+      display: block;
+    }
+
+    .grid-escaneo img:hover {
+      transform: translateY(-6px);
     }
 
     /* Tabla de especializaciones */
@@ -143,6 +168,13 @@
       scroll-margin-top: 80px;
     }
 
+    /* Clase active para menú (si no la tenés en CSS principal) */
+    .cntMenu a.active {
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
     /* Ajustes para secciones con mucho texto */
     .section-content {
       max-width: 1100px;
@@ -160,39 +192,40 @@
     <div class="centerMenu">
       <nav>
         <div class="cntMenu hiddenMenu" id="cntMenu">
-          <a class="optionMenu" href="#inicio">Inicio</a>
+          <a class="optionMenu" href="#inicio" data-target="inicio">Inicio</a>
 
           <!-- Dropdown Ingeniería -->
-          <div class="dropdownMenu">
-            <a class="optionMenu dropdownBtn" href="#ingenieria">Ingeniería</a>
+          <div class="dropdownMenu" data-parent="ingenieria">
+            <a class="optionMenu dropdownBtn" href="#ingenieria" data-target="ingenieria">Ingeniería</a>
             <div class="dropdownContent">
-              <a class="subOptionMenu" href="#modelado">Ingeniería Inversa</a>
-              <a class="subOptionMenu" href="#bimcad">Modelado BIM & CAD</a>
+              <a class="subOptionMenu" href="#modelado" data-target="modelado" data-parent="ingenieria">Ingeniería Inversa</a>
+              <a class="subOptionMenu" href="#bimcad" data-target="bimcad" data-parent="ingenieria">Modelado BIM & CAD</a>
               <div class="dropdownSubMenu">
-                <a class="subOptionMenu dropdownBtn" href="#planos">Planos</a>
+                <a class="subOptionMenu dropdownBtn" href="#planos" data-target="planos" data-parent="ingenieria">Planos</a>
                 <div class="dropdownSubContent">
-                  <a class="subSubOptionMenu" href="#conjunto">Conjunto</a>
-                  <a class="subSubOptionMenu" href="#montage">Montaje</a>
-                  <a class="subSubOptionMenu" href="#piezas">Piezas</a>
-                  <a class="subSubOptionMenu" href="#isometricos">Isométricos</a>
+                  <a class="subSubOptionMenu" href="#conjunto" data-target="conjunto" data-parent="ingenieria">Conjunto</a>
+                  <a class="subSubOptionMenu" href="#montage" data-target="montage" data-parent="ingenieria">Montaje</a>
+                  <a class="subSubOptionMenu" href="#piezas" data-target="piezas" data-parent="ingenieria">Piezas</a>
+                  <a class="subSubOptionMenu" href="#isometricos" data-target="isometricos" data-parent="ingenieria">Isométricos</a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="dropdownMenu">
-            <a class="optionMenu dropdownBtn" href="#PLC">Automatización</a>
+          <div class="dropdownMenu" data-parent="automatizacion">
+            <a class="optionMenu dropdownBtn" href="#automatizacion" data-target="automatizacion">Automatización</a>
             <div class="dropdownContent">
-              <a class="subOptionMenu" href="#PLC">PLC</a>
-              <a class="subOptionMenu" href="#hmi">HMI</a>
-              <a class="subOptionMenu optionMenu dropdownBtn" href="#domotica">Domótica</a>
-              <a class="subOptionMenu optionMenu dropdownBtn" href="#redes">Redes Industriales</a>
+              <!-- IMPORTANTE: el enlace del menú apunta al id de la sección de detalle -->
+              <a class="subOptionMenu" href="#PLC-detail" data-target="PLC-detail" data-parent="automatizacion">PLC</a>
+              <a class="subOptionMenu" href="#hmi" data-target="hmi" data-parent="automatizacion">HMI</a>
+              <a class="subOptionMenu optionMenu dropdownBtn" href="#domotica" data-target="domotica" data-parent="automatizacion">Domótica</a>
+              <a class="subOptionMenu optionMenu dropdownBtn" href="#redes" data-target="redes" data-parent="automatizacion">Redes Industriales</a>
             </div>
           </div>
 
-          <a class="optionMenu" href="#biomecanica">Biomecánica</a>
-          <a class="optionMenu" href="#quienes">Quiénes Somos</a>
-          <a class="optionMenu" href="#soluciones">Soluciones</a>
+          <a class="optionMenu" href="#biomecanica" data-target="biomecanica">Biomecánica</a>
+          <a class="optionMenu" href="#quienes" data-target="quienes">Quiénes Somos</a>
+          <a class="optionMenu" href="#soluciones" data-target="soluciones">Soluciones</a>
         </div>
 
         <div class="cntIconMenu">
@@ -300,12 +333,19 @@
       </div>
     </section>
 
-    <!-- ESCANEO (mantener como sección específica si la necesitás) -->
+    <!-- ESCANEO (ahora con 4 imágenes y sin menú interno) -->
     <section id="escaneo" class="fade-up">
       <h1>Escaneo de Piezas</h1>
       <div class="section-content">
         <p>Capturamos cada detalle con precisión milimétrica.</p>
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Escaneo 3D" />
+
+        <!-- Rejilla de 4 imágenes para que se vean bien al bajar desde Ingeniería -->
+        <div class="grid-escaneo" aria-label="Galería Escaneo de Piezas">
+          <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Escaneo 1" />
+          <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Escaneo 2" />
+          <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Escaneo 3" />
+          <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Escaneo 4" />
+        </div>
       </div>
     </section>
 
@@ -319,7 +359,7 @@
         Nuestro proceso garantiza repetibilidad, trazabilidad y resultados confiables para entornos industriales exigentes.
       </p>
 
-      <!-- Cuadrícula con 5 imágenes (se eliminó la última imagen según indicación) -->
+      <!-- Cuadrícula con 5 imágenes (según tu instrucción anterior: eliminar la última imagen original) -->
       <div class="grid-inversa" aria-label="Galería Ingeniería Inversa">
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico 1" />
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Escaneo 3D 2" />
@@ -392,8 +432,8 @@
     </section>
 
     <!-- AUTOMATIZACIÓN (sección general) -->
-    <section id="PLC" class="fade-up">
-      <h1>Automatización Industrial</h1>
+    <section id="automatizacion" class="fade-up">
+      <h1>Automatización</h1>
       <div class="section-content">
         <p>
           Diseñamos e implementamos sistemas de automatización industrial y digital que optimizan procesos, mejoran la eficiencia y aseguran la repetibilidad operativa.
@@ -415,7 +455,7 @@
       </div>
     </section>
 
-    <!-- PLC (detalle) -->
+    <!-- PLC (detalle) - id coincide con el href del menú -->
     <section id="PLC-detail" class="fade-up" aria-labelledby="PLC">
       <h1>PLC</h1>
       <div class="section-content">
@@ -547,7 +587,104 @@
   <!-- SCRIPTS -->
   <!-- Librería model-viewer (descomentar si la vas a usar) -->
   <!-- <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script> -->
+
   <script type="module" src="./js/index.js"></script>
+
+  <!-- Script para manejo de anclas y estado activo del menú -->
+  <script>
+    (function () {
+      // Selecciona todos los enlaces del menú que tengan data-target
+      const menuLinks = Array.from(document.querySelectorAll('.cntMenu a[data-target]'));
+      const sections = Array.from(document.querySelectorAll('section[id]'));
+
+      // Función para limpiar active
+      function clearActive() {
+        menuLinks.forEach(a => a.classList.remove('active'));
+        // también limpiar en padres si tu CSS los marca distinto
+        document.querySelectorAll('.dropdownMenu .optionMenu').forEach(el => el.classList.remove('active'));
+      }
+
+      // Al hacer click en un enlace del menú: scroll suave y marcar active
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          // Dejar comportamiento por defecto para enlaces normales (ancla)
+          // pero también aseguramos scroll suave y marcado
+          const targetId = this.getAttribute('href').replace('#', '');
+          const targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // marcar active en el enlace clickeado
+            clearActive();
+            this.classList.add('active');
+            // si tiene data-parent, marcar también el item padre
+            const parentKey = this.dataset.parent;
+            if (parentKey) {
+              const parentLink = document.querySelector(`.cntMenu [data-target="${parentKey}"]`);
+              if (parentLink) parentLink.classList.add('active');
+            }
+            // actualizar la URL sin recargar (opcional)
+            history.replaceState(null, '', `#${targetId}`);
+          }
+        });
+      });
+
+      // IntersectionObserver para detectar sección visible y marcar menú
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40% 0px', // dispara cuando la sección entra en la parte superior
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            // encontrar el enlace correspondiente
+            clearActive();
+            const link = document.querySelector(`.cntMenu a[href="#${id}"], .cntMenu a[data-target="${id}"]`);
+            if (link) {
+              link.classList.add('active');
+              // si el enlace tiene data-parent, marcar el padre también
+              const parentKey = link.dataset.parent;
+              if (parentKey) {
+                const parentLink = document.querySelector(`.cntMenu [data-target="${parentKey}"]`);
+                if (parentLink) parentLink.classList.add('active');
+              }
+            } else {
+              // si no hay enlace directo, intentar marcar el padre (por ejemplo, PLC-detail -> automatizacion)
+              // buscar enlaces cuyo href apunte a un id que contenga el id actual (no estricto)
+              const fallback = Array.from(document.querySelectorAll('.cntMenu a[data-target]')).find(a => {
+                const dt = a.dataset.target;
+                return dt && id.startsWith(dt);
+              });
+              if (fallback) fallback.classList.add('active');
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observamos todas las secciones
+      sections.forEach(sec => observer.observe(sec));
+
+      // Al cargar la página, si hay hash en URL, marcar el enlace correspondiente
+      window.addEventListener('load', () => {
+        const hash = location.hash.replace('#', '');
+        if (hash) {
+          const link = document.querySelector(`.cntMenu a[href="#${hash}"], .cntMenu a[data-target="${hash}"]`);
+          if (link) {
+            clearActive();
+            link.classList.add('active');
+            const parentKey = link.dataset.parent;
+            if (parentKey) {
+              const parentLink = document.querySelector(`.cntMenu [data-target="${parentKey}"]`);
+              if (parentLink) parentLink.classList.add('active');
+            }
+          }
+        }
+      });
+    })();
+  </script>
 </body>
 
 </html>

@@ -21,6 +21,11 @@
       scroll-behavior: smooth;
     }
 
+    /* Color por defecto para h1 dentro de secciones (blanco) */
+    section h1 {
+      color: #ffffff;
+    }
+
     /* Ajustes específicos para la cuadrícula de Ingeniería Inversa */
     .grid-inversa {
       display: grid;
@@ -63,6 +68,40 @@
       padding: 0 16px;
     }
 
+    /* Tabla de especializaciones */
+    .areas-table {
+      width: 100%;
+      max-width: 1100px;
+      margin: 18px auto;
+      border-collapse: collapse;
+      color: #e6e6e6;
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .areas-table thead th {
+      text-align: left;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      font-weight: 700;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .areas-table tbody td {
+      padding: 12px 18px;
+      vertical-align: top;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      font-size: 0.98rem;
+      line-height: 1.5;
+    }
+
+    .areas-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
     /* Pequeños ajustes responsivos para hero images y secciones */
     section img {
       max-width: 100%;
@@ -103,6 +142,16 @@
     :target {
       scroll-margin-top: 80px;
     }
+
+    /* Ajustes para secciones con mucho texto */
+    .section-content {
+      max-width: 1100px;
+      margin: 12px auto 36px;
+      padding: 0 16px;
+      color: #dcdcdc;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
   </style>
 </head>
 
@@ -115,7 +164,7 @@
 
           <!-- Dropdown Ingeniería -->
           <div class="dropdownMenu">
-            <a class="optionMenu dropdownBtn" href="#escaneo">Ingeniería</a>
+            <a class="optionMenu dropdownBtn" href="#ingenieria">Ingeniería</a>
             <div class="dropdownContent">
               <a class="subOptionMenu" href="#modelado">Ingeniería Inversa</a>
               <a class="subOptionMenu" href="#bimcad">Modelado BIM & CAD</a>
@@ -142,7 +191,7 @@
           </div>
 
           <a class="optionMenu" href="#biomecanica">Biomecánica</a>
-          <a class="optionMenu" href="#visualizador">Visualizador 3D</a>
+          <a class="optionMenu" href="#quienes">Quiénes Somos</a>
           <a class="optionMenu" href="#soluciones">Soluciones</a>
         </div>
 
@@ -155,20 +204,114 @@
     <!-- INICIO -->
     <section id="inicio" class="fade-up">
       <h1>PointCloud Soluciones</h1>
-      <p>Innovación en escaneo 3D y modelado de piezas industriales.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Estructura industrial" />
+      <div class="section-content">
+        <p>
+          En PointCloud Soluciones integramos tecnología, ingeniería y automatización para ofrecer soluciones completas en
+          digitalización, diseño y desarrollo técnico. Nuestro enfoque combina precisión metrológica, modelado avanzado y
+          procesos digitales que optimizan cada etapa del ciclo industrial.
+        </p>
+
+        <h2 style="color:#ffffff; margin-top:18px;">Áreas de especialización</h2>
+
+        <table class="areas-table" aria-label="Áreas de especialización">
+          <thead>
+            <tr>
+              <th>Área</th>
+              <th>Descripción técnica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ingeniería Inversa</strong></td>
+              <td>Captura tridimensional de componentes y estructuras con tolerancias controladas. Generación de modelos CAD
+                paramétricos y superficies técnicas para fabricación, análisis o impresión 3D.</td>
+            </tr>
+
+            <tr>
+              <td><strong>Modelado BIM &amp; CAD</strong></td>
+              <td>Desarrollo de modelos técnicos y arquitectónicos con compatibilidad industrial. Integración de geometrías
+                escaneadas en entornos BIM y CAD para documentación, mantenimiento y planificación.</td>
+            </tr>
+
+            <tr>
+              <td><strong>Planos y Documentación Técnica</strong></td>
+              <td>Elaboración de planos de conjunto, montaje, piezas e isométricos conforme a normas industriales. Entregables
+                listos para producción o control dimensional.</td>
+            </tr>
+
+            <tr>
+              <td><strong>Automatización Industrial</strong></td>
+              <td>Diseño y programación de sistemas PLC, HMI y redes industriales. Implementación de soluciones de domótica y
+                control inteligente para procesos productivos y entornos técnicos.</td>
+            </tr>
+
+            <tr>
+              <td><strong>Biomecánica</strong></td>
+              <td>Aplicación del escaneo 3D al desarrollo de férulas, adaptadores y dispositivos personalizados. Precisión anatómica
+                y repetibilidad garantizada para uso médico o ergonómico.</td>
+            </tr>
+
+            <tr>
+              <td><strong>Visualizador 3D</strong></td>
+              <td>Herramientas interactivas para inspección, presentación y análisis de modelos digitales. Facilita la comunicación
+                técnica y la validación de proyectos.</td>
+            </tr>
+
+            <tr>
+              <td><strong>Soluciones Integrales</strong></td>
+              <td>Asesoramiento y desarrollo de proyectos que combinan ingeniería inversa, automatización y documentación técnica.
+                Adaptamos cada servicio a las necesidades específicas del cliente.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 style="color:#ffffff; margin-top:18px;">🎯 Nuestro compromiso</h3>
+        <p>
+          Cada proyecto se ejecuta bajo estándares de precisión, trazabilidad y confiabilidad, garantizando resultados reproducibles
+          y alineados con los requerimientos industriales más exigentes.
+        </p>
+      </div>
     </section>
 
-    <!-- ESCANEO -->
+    <!-- INGENIERÍA (sección general) -->
+    <section id="ingenieria" class="fade-up">
+      <h1>Ingeniería</h1>
+      <div class="section-content">
+        <p>
+          En PointCloud Soluciones desarrollamos proyectos de ingeniería digital aplicados a entornos industriales, mecánicos y
+          de diseño técnico. Combinamos captura tridimensional, modelado CAD y documentación profesional para transformar piezas,
+          conjuntos y sistemas en información precisa y utilizable.
+        </p>
+
+        <p>
+          Nuestra área de ingeniería abarca:
+        </p>
+
+        <ul>
+          <li><strong>Ingeniería Inversa:</strong> digitalización de componentes y estructuras con tolerancias controladas, generando modelos CAD paramétricos o superficies técnicas listas para fabricación, análisis o impresión 3D.</li>
+          <li><strong>Modelado BIM &amp; CAD:</strong> integración de geometrías escaneadas en entornos BIM y CAD para documentación, mantenimiento y planificación industrial o arquitectónica.</li>
+          <li><strong>Planos Técnicos:</strong> elaboración de planos de conjunto, montaje, piezas e isométricos conforme a normas industriales, garantizando claridad y compatibilidad con procesos de producción.</li>
+        </ul>
+
+        <p>
+          Cada proyecto se ejecuta bajo estándares de precisión, trazabilidad y repetibilidad, asegurando resultados confiables y adaptados
+          a las necesidades de cada cliente.
+        </p>
+      </div>
+    </section>
+
+    <!-- ESCANEO (mantener como sección específica si la necesitás) -->
     <section id="escaneo" class="fade-up">
       <h1>Escaneo de Piezas</h1>
-      <p>Capturamos cada detalle con precisión milimétrica.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Escaneo 3D" />
+      <div class="section-content">
+        <p>Capturamos cada detalle con precisión milimétrica.</p>
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Escaneo 3D" />
+      </div>
     </section>
 
-    <!-- INGENIERÍA INVERSA -->
+    <!-- SERVICIOS DE INGENIERÍA INVERSA -->
     <section id="modelado" class="fade-up">
-      <h1 style="color:#ffeb3b;">Servicios de Ingeniería Inversa</h1>
+      <h1>Servicios de Ingeniería Inversa</h1>
 
       <p class="texto-inversa">
         Digitalizamos componentes y estructuras con tolerancias controladas, asegurando una representación fiel del estado real de cada pieza.
@@ -176,90 +319,213 @@
         Nuestro proceso garantiza repetibilidad, trazabilidad y resultados confiables para entornos industriales exigentes.
       </p>
 
-      <!-- Cuadrícula con 6 imágenes (usadas también en otras secciones) -->
-      <div class="grid-inversa">
+      <!-- Cuadrícula con 5 imágenes (se eliminó la última imagen según indicación) -->
+      <div class="grid-inversa" aria-label="Galería Ingeniería Inversa">
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico 1" />
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Escaneo 3D 2" />
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Modelo CAD 3" />
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-4.png?v=1736132681&width=1180" alt="Pieza escaneada 4" />
         <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-2.png?v=1736132685&width=1180" alt="Estructura industrial 5" />
-        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="Modelo técnico 6" />
       </div>
     </section>
 
     <!-- BIM & CAD -->
     <section id="bimcad" class="fade-up">
-      <h1>Modelado BIM & CAD</h1>
-      <p>Modelos digitales para ingeniería, arquitectura y manufactura.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-7.png?v=1736132679&width=570" alt="BIM CAD" />
+      <h1>Modelado BIM &amp; CAD</h1>
+      <div class="section-content">
+        <p>
+          Desarrollamos modelos digitales precisos para ingeniería, arquitectura e industria, integrando geometrías escaneadas y datos técnicos
+          en entornos BIM y CAD. Nuestro proceso garantiza coherencia dimensional, compatibilidad entre disciplinas y documentación confiable
+          para fabricación, montaje o mantenimiento.
+        </p>
+
+        <p>
+          Creamos modelos paramétricos, superficies técnicas y representaciones detalladas de piezas, estructuras e instalaciones, asegurando
+          que cada elemento cumpla con estándares de calidad, nomenclatura y nivel de detalle requeridos. Los entregables se adaptan a flujos
+          de trabajo industriales, proyectos de obra, ingeniería inversa y sistemas de gestión.
+        </p>
+      </div>
     </section>
 
     <!-- PLANOS -->
     <section id="planos" class="fade-up">
       <h1>Planos Técnicos</h1>
-      <p>Documentación técnica detallada para manufactura e ingeniería.</p>
+      <div class="section-content">
+        <p>
+          Elaboramos planos industriales con precisión dimensional y criterios normativos, listos para fabricación, montaje o control de calidad.
+          A partir de modelos CAD, relevamientos o escaneos 3D generamos planos de pieza, conjunto, despiece, isométricos y documentación técnica
+          completa, asegurando claridad, coherencia y compatibilidad con procesos productivos.
+        </p>
+
+        <p>
+          Nuestro enfoque garantiza entregables limpios, normalizados y trazables, adaptados a los requerimientos de ingeniería, mantenimiento y manufactura.
+        </p>
+      </div>
     </section>
 
     <section id="conjunto" class="fade-up">
       <h1>Planos de Conjunto</h1>
-      <p>Vistas generales y ensamblajes completos.</p>
+      <div class="section-content">
+        <p>Vistas generales y ensamblajes completos.</p>
+      </div>
     </section>
 
     <section id="montage" class="fade-up">
       <h1>Planos de Montaje</h1>
-      <p>Guías de ensamblaje paso a paso.</p>
+      <div class="section-content">
+        <p>Guías de ensamblaje paso a paso.</p>
+      </div>
     </section>
 
     <section id="piezas" class="fade-up">
       <h1>Planos de Piezas</h1>
-      <p>Detalles dimensionales de cada componente.</p>
+      <div class="section-content">
+        <p>Detalles dimensionales de cada componente.</p>
+      </div>
     </section>
 
     <section id="isometricos" class="fade-up">
       <h1>Isométricos</h1>
-      <p>Representaciones 3D para fabricación y piping.</p>
+      <div class="section-content">
+        <p>Representaciones 3D para fabricación y piping.</p>
+      </div>
     </section>
 
-    <!-- AUTOMATIZACIÓN -->
+    <!-- AUTOMATIZACIÓN (sección general) -->
     <section id="PLC" class="fade-up">
-      <h1>PLC</h1>
-      <p>Programación y automatización industrial.</p>
+      <h1>Automatización Industrial</h1>
+      <div class="section-content">
+        <p>
+          Diseñamos e implementamos sistemas de automatización industrial y digital que optimizan procesos, mejoran la eficiencia y aseguran la repetibilidad operativa.
+          Integramos controladores lógicos programables (PLC), interfaces hombre‑máquina (HMI) y redes industriales para lograr una comunicación confiable entre equipos,
+          sensores y sistemas de gestión.
+        </p>
+
+        <p><strong>Nuestra experiencia abarca:</strong></p>
+        <ul>
+          <li><strong>PLC:</strong> programación y configuración de controladores para líneas de producción, maquinaria y sistemas automatizados.</li>
+          <li><strong>HMI:</strong> desarrollo de interfaces visuales intuitivas para monitoreo y control en tiempo real.</li>
+          <li><strong>Domótica:</strong> integración de sistemas inteligentes para gestión de iluminación, climatización y seguridad en entornos técnicos o residenciales.</li>
+          <li><strong>Redes Industriales:</strong> diseño y puesta en marcha de redes de comunicación robustas para interconexión de dispositivos y control distribuido.</li>
+        </ul>
+
+        <p>
+          Cada solución se adapta a las necesidades del cliente, garantizando fiabilidad, seguridad y trazabilidad en entornos industriales o técnicos.
+        </p>
+      </div>
     </section>
 
+    <!-- PLC (detalle) -->
+    <section id="PLC-detail" class="fade-up" aria-labelledby="PLC">
+      <h1>PLC</h1>
+      <div class="section-content">
+        <p>
+          Diseñamos, programamos e integramos sistemas de control basados en PLC para automatizar procesos industriales y garantizar precisión, seguridad y eficiencia operativa.
+          Implementamos soluciones adaptadas a cada entorno productivo, desde maquinaria individual hasta líneas completas de fabricación.
+        </p>
+
+        <p>
+          Nuestros servicios incluyen desarrollo de lógica de control, configuración de entradas y salidas, comunicación con sensores y actuadores, integración con HMI y redes industriales,
+          además de documentación técnica y puesta en marcha.
+        </p>
+
+        <p>
+          Cada proyecto se ejecuta bajo estándares de calidad y trazabilidad, asegurando funcionamiento confiable y mantenimiento simplificado.
+        </p>
+      </div>
+    </section>
+
+    <!-- HMI -->
     <section id="hmi" class="fade-up">
       <h1>HMI</h1>
-      <p>Interfaces hombre-máquina para control eficiente.</p>
+      <div class="section-content">
+        <p>
+          Desarrollamos interfaces HMI intuitivas, seguras y optimizadas para el monitoreo y control de procesos industriales. Diseñamos pantallas claras, organizadas y funcionales
+          que permiten visualizar estados, alarmas, variables críticas y secuencias de operación en tiempo real, facilitando la interacción entre el operador y el sistema de automatización.
+        </p>
+
+        <p>
+          Integramos las HMI con PLC, sensores, actuadores y redes industriales, asegurando comunicación estable, tiempos de respuesta confiables y una experiencia de operación eficiente.
+          Cada interfaz se adapta al flujo de trabajo del cliente, priorizando usabilidad, seguridad y mantenimiento simplificado.
+        </p>
+      </div>
     </section>
 
+    <!-- DOMÓTICA -->
     <section id="domotica" class="fade-up">
       <h1>Domótica</h1>
-      <p>Automatización inteligente para hogares y empresas.</p>
+      <div class="section-content">
+        <p>
+          Implementamos sistemas de domótica orientados a la automatización inteligente de espacios técnicos, residenciales y comerciales. Integramos control de iluminación, climatización,
+          seguridad, energía y dispositivos conectados para lograr entornos más eficientes, seguros y fáciles de gestionar.
+        </p>
+
+        <p>
+          Diseñamos soluciones escalables que permiten monitoreo en tiempo real, programación de rutinas, control remoto y vinculación con sensores y actuadores. Cada sistema se adapta a las
+          necesidades del usuario, priorizando confiabilidad, estabilidad y una experiencia de uso intuitiva.
+        </p>
+      </div>
     </section>
 
+    <!-- REDES INDUSTRIALES -->
     <section id="redes" class="fade-up">
       <h1>Redes Industriales</h1>
-      <p>Integración de sistemas y comunicación industrial.</p>
+      <div class="section-content">
+        <p>
+          Diseñamos, configuramos e integramos redes industriales robustas para garantizar una comunicación segura, estable y eficiente entre PLC, HMI, sensores, actuadores y sistemas de supervisión.
+          Implementamos arquitecturas de red adaptadas a cada entorno productivo, asegurando tiempos de respuesta confiables, diagnóstico rápido y escalabilidad para futuras ampliaciones.
+        </p>
+
+        <p>
+          Trabajamos con protocolos industriales estandarizados, segmentación de redes, topologías redundantes y buenas prácticas de ciberseguridad, logrando sistemas preparados para operación continua y mantenimiento simplificado.
+        </p>
+      </div>
     </section>
 
     <!-- BIOMECÁNICA -->
     <section id="biomecanica" class="fade-up">
       <h1>Biomecánica</h1>
-      <p>Aplicaciones 3D para ortopedia, prótesis y análisis de movimiento.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-2-8.png?v=1736132678&width=570" alt="Biomecánica" />
+      <div class="section-content">
+        <p>
+          Aplicamos escaneo 3D y modelado técnico para desarrollar soluciones biomecánicas personalizadas con ajuste preciso y alta repetibilidad. Digitalizamos la anatomía del paciente para obtener
+          geometrías exactas y, a partir de ellas, diseñamos férulas, soportes, adaptadores, órtesis y dispositivos ergonómicos optimizados para confort, funcionalidad y durabilidad.
+        </p>
+
+        <p>
+          Nuestro proceso combina captura tridimensional, ingeniería inversa y manufactura aditiva, garantizando dispositivos que se adaptan perfectamente al cuerpo, reducen tiempos de fabricación
+          y mejoran la experiencia del usuario. Cada pieza se diseña con criterios técnicos y clínicos, asegurando estabilidad, precisión y resultados confiables.
+        </p>
+      </div>
     </section>
 
-    <!-- VISUALIZADOR 3D -->
-    <section id="visualizador" class="fade-up">
-      <h1>Visualizador 3D</h1>
-      <p>Explora modelos 3D directamente desde el navegador.</p>
-      <model-viewer id="viewer" alt="Modelo 3D Tornillo Industrial" auto-rotate camera-controls exposure="1.2"></model-viewer>
+    <!-- QUIÉNES SOMOS (antes Visualizador 3D) -->
+    <section id="quienes" class="fade-up">
+      <h1>Quiénes Somos</h1>
+      <div class="section-content">
+        <p>
+          En PointCloud Soluciones nos especializamos en ingeniería digital aplicada a la industria, combinando tecnologías de escaneo 3D, modelado técnico, automatización y documentación profesional.
+          Nuestro objetivo es transformar piezas, instalaciones y procesos en información precisa, trazable y lista para trabajar, aportando valor real a empresas que requieren confiabilidad y eficiencia.
+        </p>
+
+        <p>
+          Integramos ingeniería inversa, modelado CAD/BIM, automatización industrial, biomecánica y soluciones digitales para ofrecer proyectos completos, desde el relevamiento inicial hasta la entrega final
+          de modelos, planos, sistemas de control o dispositivos personalizados. Cada servicio se ejecuta bajo estándares de calidad, repetibilidad y control dimensional, garantizando resultados consistentes
+          incluso en entornos industriales exigentes.
+        </p>
+
+        <p>
+          Nos caracteriza un enfoque técnico, metódico y orientado a la solución, adaptándonos a las necesidades de cada cliente y acompañando todo el proceso con claridad, precisión y profesionalismo.
+        </p>
+      </div>
     </section>
 
     <!-- SOLUCIONES -->
     <section id="soluciones" class="fade-up">
       <h1>Soluciones Integrales</h1>
-      <p>Desde el escaneo hasta la simulación, soluciones completas para tu empresa.</p>
-      <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Soluciones integrales" />
+      <div class="section-content">
+        <p>Desde el escaneo hasta la simulación, soluciones completas para tu empresa.</p>
+        <img src="https://www.revopoint3d.com/cdn/shop/files/industrial-3-2.png?v=1736132684&width=1180" alt="Soluciones integrales" />
+      </div>
     </section>
 
     <!-- FOOTER -->

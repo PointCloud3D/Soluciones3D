@@ -8,11 +8,12 @@
   opacity: 1;
   transform: translateY(0);
 }
-body {
- background-image : url("../images/inicio - copia.png");
-  overflow-x: hidden;
- background-repeat: no-repeat;
- background-size: cover;
+body { 
+  background-image: url("../images/inicio.png"); 
+  overflow-x: hidden; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+  background-attachment: fixed; /* Esto hace que el fondo se quede estático */
 }
 .contenedor {
  overflow-y: auto;
